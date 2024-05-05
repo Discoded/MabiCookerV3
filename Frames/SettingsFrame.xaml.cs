@@ -30,18 +30,22 @@ namespace MabiCookerV3
         public SettingsPage()
         {
             InitializeComponent();
+            WindowSizeOption.SelectedIndex = Properties.Settings.Default.WindowSize;
         }
 
         private void WindowSizeOption_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var theMainWindow = (MainWindow)Application.Current.MainWindow;
+            int theWindowSetting = WindowSizeOption.SelectedIndex;
             //Settings.Default.WindowSize = WindowSizeOption.Ind;
-            System.Diagnostics.Debug.WriteLine(WindowSizeOption.SelectedIndex);
+            System.Diagnostics.Debug.WriteLine("Selected Index: "+ WindowSizeOption.SelectedIndex);
             //Names.MainWindow.MainTitle.Content = "MabiCookerV3 " + MainWindow.MapString(WindowSizeOption.SelectedIndex);
             //_viewModel.MainTitleVar = "1080p";
-            theMainWindow.MainTitle.Content = MainWindow.MapString(WindowSizeOption.SelectedIndex);
+            theMainWindow.MainTitle.Content = MainWindow.MapString(theWindowSetting);
+            Properties.Settings.Default.WindowSize = theWindowSetting;
+
             //System.Diagnostics.Debug.WriteLine(viewModel.MainTitleVar);
-            Settings.Default.Save();
+            Properties.Settings.Default.Save();
         }
     }
 }

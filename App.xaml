@@ -3,4 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MabiCookerV3Proj"
              StartupUri="MainWindow.xaml">
+
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="WinAll" TargetType="{x:Type Window}">
+                <Setter Property="FontFamily"
+                    Value="TrueType" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
+
+

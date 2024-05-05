@@ -28,7 +28,7 @@ namespace MabiCookerV3
         private static double ONE_HUNDRED = 100.0;
         private static double BAR_LEFT_START = 323.0;
 
-        string _mainTitleVar = "Test";
+        string _mainTitleVar;
         MainWindowViewModel _viewModel;
 
         public static string MapString(int theValue)
@@ -59,7 +59,8 @@ namespace MabiCookerV3
             InitializeComponent();
             _viewModel = (MainWindowViewModel)base.DataContext;
 
-            //this.MainTitle.Content = "MabiCookerV3 " + MapString(Settings.Default.WindowSize);
+
+            //this.MainTitle.Content = "MabiCookerV3 " + MapString(Properties.Settings.Default.WindowSize);
             KeyboardNavigation.SetDirectionalNavigation(ControlBar, KeyboardNavigationMode.None);
 
             // Register KeyEvent handler

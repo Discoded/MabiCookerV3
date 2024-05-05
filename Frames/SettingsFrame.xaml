@@ -15,11 +15,14 @@
         <StackPanel Margin="1">
             <Label>WindowSize</Label>
             <ComboBox Name="WindowSizeOption" SelectionChanged="WindowSizeOption_SelectionChanged">
-                <ComboBoxItem IsSelected="True">1080p</ComboBoxItem>
+                <ComboBoxItem>1080p</ComboBoxItem>
                 <ComboBoxItem>1440p(2k)</ComboBoxItem>
                 <ComboBoxItem>2160p(4k)</ComboBoxItem>
             </ComboBox>
-            <Label>Test</Label>
+            <Label>Font</Label>
+            <ComboBox>
+                <ComboBoxItem IsSelected="True">True Type</ComboBoxItem>
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Page>

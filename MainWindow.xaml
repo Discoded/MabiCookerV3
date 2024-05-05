@@ -20,6 +20,7 @@
     Top="194"
     Left="22"
     MouseDown="Window_MouseDown"
+    Style="{StaticResource WinAll}"
     >
     <Window.Resources>
         <ResourceDictionary>
@@ -74,7 +75,7 @@
             Width="Auto"
             Canvas.ZIndex="1001"
             >
-
+            <Label MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" FontSize="14" FontWeight="Bold">MabiCookerV3</Label>
             <Label x:Name="MainTitle" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Content="{Binding _mainTitleVar, UpdateSourceTrigger=PropertyChanged}"/>
             <ToggleButton Width="20" Height="20" Margin="5"
                   Checked="ToggleButton_Checked_Settings_Page"
