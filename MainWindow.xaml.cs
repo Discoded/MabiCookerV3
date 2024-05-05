@@ -24,9 +24,19 @@ namespace MabiCookerV3
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static int FULL_BAR = 245;
-        private static double ONE_HUNDRED = 100.0;
-        private static double BAR_LEFT_START = 323.0;
+        // Cooking Bar size in pixels
+        public static readonly int FULL_BAR = 245;
+        public static readonly  double ONE_HUNDRED = 100.0;
+        public static readonly double BAR_LEFT_START = 325.0;
+
+        // Recipe for Steamed Potato
+        public static readonly double POTATO_VALUE = FULL_BAR * 0.42;
+        public static readonly double WATER_VALUE = FULL_BAR * 0.56;
+
+        double _myIngVal1;
+        double _myIngVal2;
+        double _myIngVal3;
+
 
         string _mainTitleVar;
         MainWindowViewModel _viewModel;
@@ -52,12 +62,23 @@ namespace MabiCookerV3
             set { _mainTitleVar = value; }
         }
 
+        public double myIngVal1 { get { return _myIngVal1; } set { _myIngVal1 = value; } }
+        public double myIngVal2 { get { return _myIngVal2; } set { _myIngVal2 = value; } }
+        public double myIngVal3 { get { return _myIngVal3; } set { _myIngVal3 = value; } }
+
         //MainWindowViewModel _viewModel = new MainWindowViewModel();
 
         public MainWindow()
         {
+
+            _viewModel = new MainWindowViewModel();
+            _viewModel.myIngVal1 = 42.0;
+            _viewModel.myIngVal2 = 58.0;
+            _viewModel.myIngVal3 = 0.0;
+
+            DataContext = _viewModel;
             InitializeComponent();
-            _viewModel = (MainWindowViewModel)base.DataContext;
+            //this.DataContext = this;
 
 
             //this.MainTitle.Content = "MabiCookerV3 " + MapString(Properties.Settings.Default.WindowSize);
@@ -139,8 +160,6 @@ namespace MabiCookerV3
             bar_end += ingBarWidth2;
 
             Canvas.SetLeft(ingredientBar3, bar_end);
-
-
         }
 
         private double Parse_String(string theStr)
@@ -203,5 +222,28 @@ namespace MabiCookerV3
             this.DragMove();
         }
 
+        private void SPotato_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.myIngVal1 = 42.0;
+            _viewModel.myIngVal2 = 58.0;
+            _viewModel.myIngVal3 = 0.0;
+            Set_Button_Click(sender, e);
+        }
+
+        private void TBasil_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.myIngVal1 = 50.0;
+            _viewModel.myIngVal2 = 30.0;
+            _viewModel.myIngVal3 = 20.0;
+            Set_Button_Click(sender, e);
+        }
+
+        private void VCanape_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.myIngVal1 = 40.0;
+            _viewModel.myIngVal2 = 50.0;
+            _viewModel.myIngVal3 = 10.0;
+            Set_Button_Click(sender, e);
+        }
     }
 }

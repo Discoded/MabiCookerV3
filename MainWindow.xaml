@@ -12,13 +12,14 @@
     xmlns:local="clr-namespace:MabiCookerV3"
     mc:Ignorable="d"
     Title="MabiCookerV3" 
-    Height="580" 
-    Width="600"
+    Name="theWindow"
+    Height="589"
+    Width="604"
     ResizeMode="NoResize"
     WindowStartupLocation="Manual"
     Topmost="True"
-    Top="194"
-    Left="22"
+    Top="189"
+    Left="20"
     MouseDown="Window_MouseDown"
     Style="{StaticResource WinAll}"
     >
@@ -102,6 +103,18 @@
             VerticalAlignment="Top" 
             />
 
+        <!-- Quick Slot Menu?-->
+        <StackPanel
+            Grid.Row="1" 
+            Grid.Column="1"
+            Panel.ZIndex="1002"
+            Margin="120,170,0,0"
+            >
+            <Button Width="120" Click="SPotato_Button_Click">Steamed Potato</Button>
+            <Button Width="120" Click="TBasil_Button_Click">Tomato Basil Salad</Button>
+            <Button Width="120" Click="VCanape_Button_Click">Vegetable Canape</Button>
+        </StackPanel>
+
         <StackPanel 
             x:Name="SetPanel"
             Grid.Row="1" 
@@ -109,48 +122,75 @@
             Width="300"
             Panel.ZIndex="1003"
             >
- 
+            
             <!-- Set %! Button -->
             <Button Width="73" x:Name="Set" Margin="163,285,0,10" Click="Set_Button_Click" Panel.ZIndex="100">Set %!</Button>
 
             <!-- Cooking Values TextBox-->
-            <WrapPanel Panel.ZIndex="99" Grid.Row="1" Grid.Column="1" Width="245" Height="100" Margin="0,0,6,0">
-                <TextBox Width="73" x:Name="ingredientValue1" Margin="0,0,12,0" Text="33" TextAlignment="Center" />
-                <TextBox Width="73" x:Name="ingredientValue2" Margin="0,0,12,0" Text="33" TextAlignment="Center"/>
-                <TextBox Width="73" x:Name="ingredientValue3" IsEnabled="False" Text="33" TextAlignment="Center"/>
+            <WrapPanel Panel.ZIndex="99" Grid.Row="1" Grid.Column="1" Width="245" Height="100" Margin="0,6,6,0">
+                <TextBox Width="73" x:Name="ingredientValue1" Margin="0,0,12,0" Text="{Binding Path=myIngVal1}" TextAlignment="Center" />
+                <TextBox Width="73" x:Name="ingredientValue2" Margin="0,0,12,0" Text="{Binding Path=myIngVal2}" TextAlignment="Center"/>
+                <TextBox Width="73" x:Name="ingredientValue3" IsEnabled="False" Text="{Binding Path=myIngVal3}" TextAlignment="Center"/>
             </WrapPanel>
         </StackPanel>
 
         <!-- Cooking Bar -->
         <Canvas x:Name="myCanvas">
-
+            <Line
+                Name="LineLeft"
+                X1="2" Y1="30"
+                X2="2" Y2="583"
+                Stroke="#AA3377"
+                StrokeThickness="4"/>
+            <Line
+                Name="LineRight"
+                X1="598" Y1="30"
+                X2="598" Y2="583"
+                Stroke="#AA3377"
+                StrokeThickness="4"/>
+            <Line
+                Name="LineTop"
+                X1="0" Y1="32"
+                X2="598" Y2="32"
+                Stroke="#AA3377"
+                StrokeThickness="4"/>
+            <Line
+                Name="LineBot"
+                X1="0" Y1="583"
+                X2="600" Y2="583"
+                Stroke="#AA3377"
+                StrokeThickness="4"/>
 
             <Rectangle
             Name="ingredientBar1"
-            Width="81.67"
+            Width="{x:Static local:MainWindow.POTATO_VALUE}"
             Height="10"
             Stroke="#0077BB" 
             StrokeThickness="1"
-            Canvas.Left="323"
-            Canvas.Top="498"/>
+            Canvas.Left="{x:Static local:MainWindow.BAR_LEFT_START}"
+            Canvas.Top="503">
+                <Rectangle.Fill>
+                    <SolidColorBrush Opacity="1.0"></SolidColorBrush>
+                </Rectangle.Fill>
+            </Rectangle>
 
             <Rectangle
             Name="ingredientBar2"
-            Width="81.67"
+            Width="{x:Static local:MainWindow.WATER_VALUE}"
             Height="10"
             Stroke="#EE7733" 
             StrokeThickness="1"
-            Canvas.Left="404.67"
-            Canvas.Top="498"/>
+            Canvas.Left="427.9"
+            Canvas.Top="503"/>
 
             <Rectangle
             Name="ingredientBar3"
-            Width="81.67"
+            Width="0"
             Height="10"
             Stroke="#EE3377" 
             StrokeThickness="1"
-            Canvas.Left="486.34"
-            Canvas.Top="498"/>
+            Canvas.Left="488.34"
+            Canvas.Top="503"/>
 
         </Canvas>
 
