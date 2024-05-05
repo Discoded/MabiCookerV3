@@ -136,13 +136,9 @@ namespace MabiCookerV3
             double bar_end;
             double ingBarWidth1, ingBarWidth2, ingBarWidth3;
 
-            ing1 = Parse_String(ingredientValue1.Text);
-            ing2 = Parse_String(ingredientValue2.Text);
-            ing3 = ONE_HUNDRED - ing1 - ing2;
-
-            System.Diagnostics.Debug.WriteLine(ing1);
-            System.Diagnostics.Debug.WriteLine(ing2);
-            System.Diagnostics.Debug.WriteLine(ing3);
+            ing1 = Math.Clamp(Parse_String(ingredientValue1.Text), 0.0, 100.0);
+            ing2 = Math.Clamp(Parse_String(ingredientValue2.Text), 0.0, 100.0 - ing1);
+            ing3 = Math.Clamp(ONE_HUNDRED - ing1 - ing2, 0.0, 100.0);
 
             ingredientValue3.Text = ing3.ToString();
 
