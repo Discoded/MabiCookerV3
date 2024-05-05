@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Geometry x:Key="closeGeometry">F0 M24,24z M0,0z M12,14.122L17.303,19.425A1.5,1.5,0,0,0,19.425,17.303L14.12,12 19.424,6.697A1.5,1.5,0,1,0,17.302,4.576L12,9.879 6.697,4.576A1.5,1.5,0,1,0,4.575,6.696L9.88,12 4.576,17.304A1.5,1.5,0,1,0,6.698,19.424z</Geometry>
+  <DrawingGroup x:Key="closeDrawingGroup" ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <GeometryDrawing Brush="#FFCC3311" Geometry="{StaticResource closeGeometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="closeDrawingImage" Drawing="{StaticResource closeDrawingGroup}" />
+  <Geometry x:Key="minimizeGeometry">F1 M24,24z M0,0z M7,19L17,19C17.55,19 18,19.45 18,20 18,20.55 17.55,21 17,21L7,21C6.45,21 6,20.55 6,20 6,19.45 6.45,19 7,19</Geometry>
+  <DrawingGroup x:Key="minimizeDrawingGroup" ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+    <GeometryDrawing Brush="#FFCC3311" Geometry="{StaticResource minimizeGeometry}" />
+  </DrawingGroup>
+  <DrawingImage x:Key="minimizeDrawingImage" Drawing="{StaticResource minimizeDrawingGroup}" />
+  <Geometry x:Key="settingsGeometry">F1 M24,24z M0,0z M9.25,22L8.85,18.8Q8.525,18.675 8.238,18.5 7.951,18.325 7.675,18.125L4.7,19.375 1.95,14.625 4.525,12.675Q4.5,12.5,4.5,12.338L4.5,11.663Q4.5,11.5,4.525,11.325L1.95,9.375 4.7,4.625 7.675,5.875Q7.95,5.675 8.25,5.5 8.55,5.325 8.85,5.2L9.25,2 14.75,2 15.15,5.2Q15.475,5.325 15.763,5.5 16.051,5.675 16.325,5.875L19.3,4.625 22.05,9.375 19.475,11.325Q19.5,11.5,19.5,11.663L19.5,12.337Q19.5,12.5,19.45,12.675L22.025,14.625 19.275,19.375 16.325,18.125Q16.05,18.325 15.75,18.5 15.45,18.675 15.15,18.8L14.75,22z M12.05,15.5Q13.5,15.5 14.525,14.475 15.55,13.45 15.55,12 15.55,10.55 14.525,9.525 13.5,8.5 12.05,8.5 10.575,8.5 9.562,9.525 8.549,10.55 8.55,12 8.551,13.45 9.563,14.475 10.575,15.5 12.05,15.5</Geometry>
+  <DrawingGroup x:Key="settingsDrawingGroup" ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+    <GeometryDrawing Brush="#FF000000" Geometry="{StaticResource settingsGeometry}" />
+  </DrawingGroup>
+  <DrawingImage x:Key="settingsDrawingImage" Drawing="{StaticResource settingsDrawingGroup}" />
+</ResourceDictionary>
