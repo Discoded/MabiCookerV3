@@ -38,4 +38,4 @@ jobs:
         with:
           tag_name: ${{  github.ref_name }}
           files: |
-            bin/Release/net8.0-windows/publish/*.exe
+            MabiCookerV3/bin/Release/net8.0-windows/win-x64/publish/*.exe
