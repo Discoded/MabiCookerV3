@@ -39,7 +39,9 @@
 name: .NET Core Desktop
 
 on: 
-  push
+  push:
+    tags:
+        - "v*"
 
 env:
   PROJECT_PATH: MabiCookerV3.csproj
