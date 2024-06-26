@@ -79,5 +79,5 @@ jobs:
       - uses: csexton/release-asset-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: bin/Release/net8.0-windows7.0/publish/*.exe
+          pattern: bin/Release/netcoreapp3.1/win-x64/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
