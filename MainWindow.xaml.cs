@@ -123,6 +123,9 @@ namespace MabiCookerV3
                 case Key.Down:
                     this.Top += 1.0;
                     break;
+                case Key.Enter:
+                    Set_Button_Click(null, null);
+                    break;
                 case Key.Escape:
                     Keyboard.ClearFocus();
                     break;

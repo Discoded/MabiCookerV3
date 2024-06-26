@@ -110,11 +110,12 @@
             Panel.ZIndex="1002"
             Margin="120,170,0,0"
             >
+            <Label Width="120" Content="↓Quick Set↓" FontSize="14" FontWeight="Bold" Foreground="#BBBBBB"/>
             <Button Width="120" Click="SPotato_Button_Click">Steamed Potato</Button>
             <Button Width="120" Click="TBasil_Button_Click">Tomato Basil Salad</Button>
             <Button Width="120" Click="VCanape_Button_Click">Vegetable Canape</Button>
         </StackPanel>
-
+        
         <StackPanel 
             x:Name="SetPanel"
             Grid.Row="1" 
@@ -126,11 +127,13 @@
             <!-- Set %! Button -->
             <Button Width="73" x:Name="Set" Margin="163,285,0,10" Click="Set_Button_Click" Panel.ZIndex="100">Set %!</Button>
 
+            <Label Width="150" Margin="0,0,100,0" Content="↓Set Manually Here↓" FontSize="14" FontWeight="Bold" Foreground="#BBBBBB"/>
+            
             <!-- Cooking Values TextBox-->
             <WrapPanel Panel.ZIndex="99" Grid.Row="1" Grid.Column="1" Width="245" Height="100" Margin="0,6,6,0">
-                <TextBox Width="73" x:Name="ingredientValue1" Margin="0,0,12,0" Text="{Binding Path=myIngVal1}" TextAlignment="Center" />
-                <TextBox Width="73" x:Name="ingredientValue2" Margin="0,0,12,0" Text="{Binding Path=myIngVal2}" TextAlignment="Center"/>
-                <TextBox Width="73" x:Name="ingredientValue3" IsEnabled="False" Text="{Binding Path=myIngVal3}" TextAlignment="Center"/>
+                <TextBox Width="73" x:Name="ingredientValue1" Margin="0,-2,12,0" Text="{Binding Path=myIngVal1}" TextAlignment="Center" />
+                <TextBox Width="73" x:Name="ingredientValue2" Margin="0,-2,12,0" Text="{Binding Path=myIngVal2}" TextAlignment="Center"/>
+                <TextBox Width="73" x:Name="ingredientValue3" Margin="0,-2,0,0" IsEnabled="False" Text="{Binding Path=myIngVal3}" TextAlignment="Center"/>
             </WrapPanel>
         </StackPanel>
 
