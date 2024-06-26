@@ -17,7 +17,7 @@ https://github.com/Discoded/MabiCookerV3</Description>
     <RepositoryUrl>https://github.com/Discoded/MabiCookerV3</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PlatformTarget>x64</PlatformTarget>
-	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <RuntimeIdentifier>Portable</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
