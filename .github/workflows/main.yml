@@ -1,9 +1,6 @@
 name: "Deploy Application"
 
-on:
-  push:
-    tags:
-      - "v*"
+on: workflow_dispatch
 
 env:
   PROJECT_PATH: MabiCookerV3.csproj
