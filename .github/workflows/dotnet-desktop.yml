@@ -46,7 +46,7 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        configuration: [Release]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
@@ -69,9 +69,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - run: dotnet build --configuration Release --no-restore
+    - run: dotnet build ${{ Solution_Name }} --configuration Release
     - name: Create the package
-      run: dotnet pack --configuration Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
+      run: dotnet pack ${{ Solution_Name }} --configuration Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
     - uses: actions/create-release@v1
       id: create_release
