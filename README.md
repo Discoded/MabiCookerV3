@@ -14,6 +14,7 @@ If you're on 1080p Borderless, the window should automatically be placed on top 
 - [ ] Add 2160p (4k) Default window position.
 - [ ] MVVM
 - [ ] Move Window pixel by pixel with arrow keys (Still incomplete)
+- [ x ] Added Enter hotkey
 
 # Credits 
 
