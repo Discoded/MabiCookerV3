@@ -92,6 +92,7 @@ jobs:
     - name: Upload Assets to Release with a wildcard
       uses: csexton/release-asset-action@v3
       with:
+        file: release.zip
         pattern: "build/*"
         github-token: ${{ secrets.GITHUB_TOKEN }}
         release-url: ${{ steps.create_release.outputs.upload_url }}
