@@ -69,9 +69,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - run: dotnet build ${{ Solution_Name }} --configuration Release
+    - run: dotnet build ${{ env.Solution_Name }} --configuration Release
     - name: Create the package
-      run: dotnet pack ${{ Solution_Name }} --configuration Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
+      run: dotnet pack ${{ env.Solution_Name }} --configuration Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-build
 
     - uses: actions/create-release@v1
       id: create_release
