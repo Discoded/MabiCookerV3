@@ -38,11 +38,7 @@
 
 name: .NET Core Desktop
 
-on: 
-  push:
-    tags:
-    - '*'
-  
+on: workflow_dispatch
 
 jobs:
 
