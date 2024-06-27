@@ -8,13 +8,19 @@ Use arrow keys to accurately align the MabiCookerV3 window over the Cooking wind
 
 If you're on 1080p Borderless, the window should automatically be placed on top of the default position of the Cooking window.
 
+# Installation
+
+Head to [Releases](https://github.com/Discoded/MabiCookerV3/releases/)
+
+[Latest](https://github.com/Discoded/MabiCookerV3/releases/tag/v1.1.9)
+
 # TODO
 
 - [ ] Add 1440p (2k) Default window position.
 - [ ] Add 2160p (4k) Default window position.
 - [ ] MVVM
 - [ ] Move Window pixel by pixel with arrow keys (Still incomplete)
-- [ x ] Added Enter hotkey
+- [x] Added Enter hotkey
 
 # Credits 
 
